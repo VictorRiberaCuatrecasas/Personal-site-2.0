@@ -1,7 +1,7 @@
 import MainNavigation from "./MainNavigation";
 import Footer from "./Footer";
 import { LayoutProps } from "../../types";
-import styles from "./Layout.module.css"
+import styles from "./Layout.module.scss"
 
 export default function Layout(props: LayoutProps) {
   return (
