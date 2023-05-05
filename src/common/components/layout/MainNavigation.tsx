@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import  Link  from 'next/link'
+import Link from "next/link";
 import styles from "./MainNavigation.module.scss";
+import HamburgerMenu from "../navbar/HamburgerMenu";
+import ThemeToggler from "../navbar/ThemeToggler";
 
-interface NavbarProps {}
-
-const MainNavigation: React.FC<NavbarProps> = () => {
+export default function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -43,11 +43,8 @@ const MainNavigation: React.FC<NavbarProps> = () => {
           <Link href="/test3">Test3</Link>
         </li>
       </ul>
-      <div className={styles.menuIcon} onClick={handleMenuClick}>
-        <div className={styles.menuIconLines}></div>
-      </div>
+      <ThemeToggler />
+        <HamburgerMenu handleMenu={handleMenuClick}/>
     </nav>
   );
-};
-
-export default MainNavigation;
+}

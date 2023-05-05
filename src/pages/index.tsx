@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main style={{ marginTop: 80}}> {/* navbar hotfix */}
         <h1>{locale}</h1>
         <h2>{t("test")}</h2>
         <div>

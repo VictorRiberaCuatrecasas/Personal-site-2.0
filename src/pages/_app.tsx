@@ -24,13 +24,13 @@ function App(props: MyAppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Layout>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Layout>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
-        </ThemeProvider>
-      </Layout>
+        </Layout>
+      </ThemeProvider>
     </CacheProvider>
   );
 }
