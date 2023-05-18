@@ -1,0 +1,93 @@
+@import "../../../styles/variables";
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-left: $navlink-margin-left;
+  border-radius: $toggle-border-radious;
+  box-shadow: $toggle-box-shadow;
+}
+
+.switch > span {
+  position: absolute;
+  top: 6px;
+  pointer-events: none;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  width: 50%;
+  text-align: center;
+}
+
+input.checkToggleRoundFlat:checked ~ .off {
+  color: $color-primary;
+}
+
+input.checkToggleRoundFlat:checked ~ .on {
+  color: #fff;
+}
+
+.switch > span.on {
+  left: 0;
+  padding-left: 4px;
+  color: $color-primary;
+}
+
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: #fff;
+}
+
+.checkToggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.checkToggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.checkToggleRoundFlat + label {
+  padding: 2px;
+  width: $toggle-width;
+  height: $toggle-height;
+  background-color: $color-primary;
+  border-radius: $toggle-border-radious;
+}
+input.checkToggleRoundFlat + label:before,
+input.checkToggleRoundFlat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.checkToggleRoundFlat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: $color-primary;
+  border-radius: $toggle-border-radious;
+}
+input.checkToggleRoundFlat + label:after {
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  width: 33px;
+  background-color: #fff;
+  border-radius: $toggle-border-radious;
+
+transition: margin 0.8s;
+transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+input.checkToggleRoundFlat:checked + label:after {
+  margin-left: 31px;
+}

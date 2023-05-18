@@ -1,35 +1,103 @@
 .noiseContainer {
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: auto;
-    left: 0;
-    opacity: 1;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    transition: opacity 1s ease-out;
-    height: 100vh;
-    width: 100vw;
-    z-index: 1;
-    background-image: url("~/public/images/noise.png");
-    animation: noise-animation 1s steps(10) infinite;
-    background-position: 0 0;
-    filter: contrast(5);
-  }
+  // option 1
+  // background-attachment: fixed;
+  // background-repeat: repeat;
+  // background-size: auto;
+  // left: 0;
+  // opacity: 1;
+  // pointer-events: none;
+  // position: fixed;
+  // top: 0;
+  // transition: opacity 1s ease-out;
+  // height: 100vh;
+  // width: 100vw;
+  // z-index: 1;
+  // background-image: url("~/public/images/noise.png");
+  // animation: noise-animation 1s steps(10) infinite;
+  // background-position: 0 0;
+  // filter: contrast(5);
 
-  @keyframes noise-animation {
-    100% {
-      background-position: 100% 100%;
-    }
-  }
+  //option 2
+  // z-index: 0;
+  // position: fixed;
+  // top: -50%;
+  // left: -50%;
+  // right: -50%;
+  // bottom: -50%;
+  // width: 200%;
+  // height: 200vh;
+  // background: transparent url("~/public/images/noise.png") repeat 0 0;
+  // background-repeat: repeat;
+  // animation: noise-animation 0.2s infinite;
+  // opacity: 0.9;
+  // visibility: visible;
+  // filter: contrast(5);
 
-  .sample_body {
-    top: 0;
-    left: 0;
-    margin: 0;
-    background-color: rgb(185, 205, 185);
-    z-index: 0;
-    height: 100vh;
-    width: 100vw;
-    color: white;
+  //option 3
+  position: fixed;
+  z-index: 0;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  -webkit-animation: noise-animation 7s steps(10) infinite;
+  animation: noise-animation 7s steps(10) infinite;
+  background-image: url("~/public/images/noise2.png");
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+@keyframes noise-animation {
+  //option 1
+  // 100% {
+  //   background-position: 100% 100%;
+  // }
+
+  //option 2
+  0% {
+    transform: translate(0, 0);
   }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
+}
+
+.sample_body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: rgb(185, 205, 185);
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}

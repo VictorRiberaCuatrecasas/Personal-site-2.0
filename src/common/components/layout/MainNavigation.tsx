@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./MainNavigation.module.scss";
 import HamburgerMenu from "../navbar/HamburgerMenu";
 import ThemeToggler from "../navbar/ThemeToggler";
+import LocaleSelector from "../navbar/LocaleSelector";
 
 export default function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +45,8 @@ export default function MainNavigation() {
         </li>
       </ul>
       <ThemeToggler />
-        <HamburgerMenu handleMenu={handleMenuClick}/>
+      <LocaleSelector />
+      <HamburgerMenu handleMenu={handleMenuClick} />
     </nav>
   );
 }

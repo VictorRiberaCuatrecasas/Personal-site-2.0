@@ -1,4 +1,7 @@
+@import "../../../styles/variables";
+
 .navbar {
+  color: $color-primary;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,8 +10,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  padding: 0 20px;
+  height: $navbar-height;
+  padding: $navbar-padding;
   background-color: #ffffff;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   transition: top 0.3s ease-in-out;
@@ -32,29 +35,29 @@
 }
 
 .navLinks li {
-  margin-left: 20px;
+  margin-left: $navlink-margin-left;
 }
 
 .navLinks a {
   text-decoration: none;
-  color: #333333;
+  color: $color-primary;
   font-size: 18px;
   font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
   .navbar {
-    height: 45px;
+    height: $navbar-small-height;
   }
 
 
   .hidden {
-    top: -45px;
+    top: -$navbar-small-height;
   }
 
   .navLinks {
     position: absolute;
-    top: 45px;
+    top: $navbar-small-height;
     left: 0;
     background-color: #ffffff;
     width: 100%;
