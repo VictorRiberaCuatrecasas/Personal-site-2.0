@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./MainNavigation.module.scss";
 import HamburgerMenu from "../navbar/HamburgerMenu";
-import ThemeToggler from "../navbar/ThemeToggler";
+// import ThemeToggler from "../navbar/ThemeToggler";
 import LocaleSelector from "../navbar/LocaleSelector";
 
 export default function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isTopScrollPos, setIsTopScrollPos] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,7 @@ export default function MainNavigation() {
         prevScrollPos > currentScrollPos || currentScrollPos < 10
       );
       setPrevScrollPos(currentScrollPos);
+      window.pageYOffset === 0 ? setIsTopScrollPos(true) : setIsTopScrollPos(false)
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,7 +33,7 @@ export default function MainNavigation() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${isNavbarVisible ? "" : styles.hidden}`}>
+    <nav className={`${styles.navbar} ${isNavbarVisible ? "" : styles.hidden}  ${isTopScrollPos && styles.topScroll}`}>
       <div className={styles.logo}>Logo</div>
       <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
         <li>
@@ -44,7 +46,7 @@ export default function MainNavigation() {
           <Link href="/test3">Test3</Link>
         </li>
       </ul>
-      <ThemeToggler />
+      {/* <ThemeToggler /> Future  theme toggle ?*/}
       <LocaleSelector />
       <HamburgerMenu handleMenu={handleMenuClick} />
     </nav>

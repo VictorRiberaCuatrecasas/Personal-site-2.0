@@ -1,0 +1,21 @@
+@import "~/src/styles/variables";
+
+.header {
+    height: 100vh;
+    position: relative;
+    background-image: url("~/public/images/background1HQ.jpeg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.titleBox {
+position: absolute;
+top: 30vh;
+left: 0;
+right: 0;
+margin: auto;
+text-align: center;
+// transform: translateY(-50%);
+}
