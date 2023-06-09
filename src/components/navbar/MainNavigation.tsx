@@ -36,13 +36,13 @@ export default function MainNavigation() {
     <nav className={`${styles.navbar} ${isNavbarVisible ? "" : styles.hidden}  ${isTopScrollPos && styles.topScroll}`}>
       <div className={styles.logo}>Logo</div>
       <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
-        <li>
+        <li data-cursor="pointer">
           <Link href="/test1">Test1</Link>
         </li>
-        <li>
+        <li data-cursor="pointer">
           <Link href="/test2">Test2</Link>
         </li>
-        <li>
+        <li data-cursor="pointer">
           <Link href="/test3">Test3</Link>
         </li>
       </ul>

@@ -1,5 +1,5 @@
 import styles from "./HamburgerMenu.module.scss";
-import { HandleMenuType } from "../../types";
+import { HandleMenuType } from "../types";
 import { useState } from "react";
 
 export default function HamburgerMenu({handleMenu}: {handleMenu: HandleMenuType}) {

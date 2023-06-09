@@ -1,3 +1,5 @@
+@import "~/src/styles/variables";
+
 .titleWrapper {
   position: absolute;
   top: 30vh;
@@ -12,7 +14,7 @@
   color: transparent;
   letter-spacing: -1px;
   font-weight: 100;
-  -webkit-text-stroke: 2px #994F83;
+  -webkit-text-stroke: 2px $color-title;
   text-transform: uppercase;
   font-size: 2.5rem;
   margin: 0;
@@ -30,8 +32,8 @@
   display: inline-block;
   font-weight: 900;
   letter-spacing: normal;
-  color: #994F83;
-  -webkit-text-stroke:3px #994F83;
+  color: $color-title;
+  -webkit-text-stroke:3px $color-title;
 }
 
 .waveWrapper {
@@ -62,8 +64,7 @@
 
 .introRole {
   margin: 0;
-  color: #994F83;
+  color: $color-title;
   font-weight: 900;
   letter-spacing: normal;
-  // -webkit-text-stroke: 1px #994F83;
 }

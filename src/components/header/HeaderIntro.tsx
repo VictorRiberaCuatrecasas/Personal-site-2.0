@@ -8,7 +8,7 @@ export default function HeaderIntro() {
     <div className={styles.titleWrapper}>
       <h3 className={styles.introId}>
         {t("headerIntroductionOne")}&nbsp;
-        <div className={styles.name}>
+        <div className={styles.name}  data-cursor="pointer2">
           {t("victorName")}
           <div className={styles.waveWrapper}>
             <div className={styles.wave}></div>

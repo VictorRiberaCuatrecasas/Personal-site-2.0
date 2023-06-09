@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import "~/src/styles/variables";
 
 .navIcon {
     display: none;
@@ -8,7 +8,6 @@
     position: relative;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
-    cursor: pointer;
   }
 
   .navIcon span {

@@ -7,7 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../theme";
 import createEmotionCache from "../createEmotionCache";
-import Layout from "../common/components/layout/Layout";
+import Layout from "../components/layout/Layout";
 import { appWithTranslation } from "next-i18next";
 
 // Client-side cache, shared for the whole session of the user in the browser.
