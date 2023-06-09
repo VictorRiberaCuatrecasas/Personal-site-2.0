@@ -1,3 +1,8 @@
 {
-    "test": "hola"
+    "test": "hola",
+    "headerIntroductionOne": "Hey, soy",
+    "headerIntroductionTwo": "Un placer conocerte",
+    "victorName": "Victor Ribera",
+    "introRoleOne": "Soy un desarrollador web, artista marcial",
+    "introRoleTwo": "y una buena persona ;)"
 }
