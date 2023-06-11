@@ -28,44 +28,54 @@ export default function Cursor() {
       requestAnimationFrame(loop);
     });
 
-    if (cursorBorder) {//need to find a way to make it go back to normal
-      document.body.onmousedown = function () {
-        cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-        cursorBorder.style.setProperty("--size", "40px");
-      };
-      document.body.onmouseup = function () {
-        cursorBorder.style.backgroundColor = "unset";
-        cursorBorder.style.mixBlendMode = "unset";
-        cursorBorder.style.setProperty("--size", "30px");
-      };
-    }
-
     document.querySelectorAll<HTMLElement>("[data-cursor]").forEach((item) => {
-      let styleCursor = function () {
-        if (item.dataset.cursor === "pointer") {
-          if (cursorBorder) {
-            cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-            cursorBorder.style.setProperty("--size", "20px");
-          }
+      if (item.dataset.cursor === "pointer") {
+        if (cursorBorder && cursor) {
+          item.addEventListener("mouseover", (e) => {
+            cursorBorder.style.setProperty("--size", "50px");
+            cursor.style.setProperty("display", "none");
+          });
+          item.addEventListener("mouseout", (e) => {
+            cursorBorder.style.setProperty("--size", "30px");
+            cursor.style.setProperty("display", "unset");
+          });
+          item.addEventListener("mousedown", (e) => {
+            cursorBorder.style.setProperty("--size", "30px");
+            cursor.style.setProperty("display", "none");
+          });
+          item.addEventListener("mouseup", (e) => {
+            cursorBorder.style.setProperty("--size", "50px");
+            cursor.style.setProperty("display", "unset");
+          });
         }
-        if (item.dataset.cursor === "pointer2") {
-          if (cursorBorder) {
+      }
+
+      if (item.dataset.cursor === "pointer2") {
+        if (cursorBorder && cursor) {
+          item.addEventListener("mouseover", (e) => {
             cursorBorder.style.backgroundColor = "white";
             cursorBorder.style.mixBlendMode = "difference";
             cursorBorder.style.setProperty("--size", "50px");
-          }
+            cursor.style.setProperty("display", "none");
+          });
+          item.addEventListener("mouseout", (e) => {
+            cursorBorder.style.backgroundColor = "unset";
+            cursorBorder.style.mixBlendMode = "unset";
+            cursorBorder.style.setProperty("--size", "30px");
+            cursor.style.setProperty("display", "unset");
+          });
+          item.addEventListener("mousedown", (e) => {
+            cursorBorder.style.setProperty("--size", "30px");
+            cursor.style.setProperty("display", "none");
+          });
+          item.addEventListener("mouseup", (e) => {
+            cursorBorder.style.backgroundColor = "white";
+            cursorBorder.style.mixBlendMode = "difference";
+            cursorBorder.style.setProperty("--size", "50px");
+            cursor.style.setProperty("display", "unset");
+          });
         }
-      };
-      item.addEventListener("mouseover", styleCursor);
-      item.addEventListener("mousedown", styleCursor);
-
-      item.addEventListener("mouseout", (e) => {
-        if (cursorBorder) {
-          cursorBorder.style.backgroundColor = "unset";
-          cursorBorder.style.mixBlendMode = "unset";
-          cursorBorder.style.setProperty("--size", "30px");
-        }
-      });
+      }
     });
   }, []);
 
@@ -73,8 +83,6 @@ export default function Cursor() {
     <>
       <div id="cursor" className={styles.cursor}></div>
       <div id="cursor-border" className={styles.cursorBorder}></div>
-      <input type="button" value="Hover Me!" data-cursor="pointer"></input>
-      <input type="button" value=":-D" data-cursor="pointer2"></input>
     </>
   );
 }

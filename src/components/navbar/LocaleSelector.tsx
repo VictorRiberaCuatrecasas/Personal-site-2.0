@@ -21,7 +21,7 @@ export default function LocaleSelector() {
   }
 
   return (
-    <div className={styles.switch}>
+    <div className={styles.switch}  data-cursor="pointer">
       <input
         type="checkbox"
         id="language-toggle"
