@@ -10,12 +10,12 @@
 }
 
 .introId {
-  color: #f8e2b9;
+  color: $color-header-light-bg;
   letter-spacing: -1px;
   font-weight: 100;
   -webkit-text-stroke: 1px $color-title;
-  text-shadow: -1px -1px 0 $color-title, 1px -1px 0 $color-title,
-    -1px 1px 0 $color-title, 1px 1px 0 $color-title;
+  text-shadow: -1px -1px 3px $color-title, 1px -1px 8px $color-title,
+    -1px 1px 8px $color-title, 1px 1px 0 $color-title;
   text-transform: uppercase;
   font-size: 2.5rem;
   margin: 0;
@@ -24,13 +24,6 @@
   &:nth-child(2) {
     letter-spacing: 5px;
   }
-}
-
-.strokeme {
-  color: white;
-  background-color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
 }
 
 .name {
@@ -42,6 +35,7 @@
   letter-spacing: normal;
   color: $color-title;
   -webkit-text-stroke: 3px $color-title;
+  text-shadow: none;
 }
 
 .waveWrapper {
@@ -71,15 +65,20 @@
 
 .introRole {
   margin: 0;
-  color: $color-title;
-  font-weight: 900;
+  color: $color-header-light-bg;
+  font-weight: 100;
+  font-size: 1.5em;
   letter-spacing: normal;
+  text-shadow: -1px -1px 0 $color-title, 1px -1px 0 $color-title,
+    -1px 1px 0 $color-title, 1px 1px 0 $color-title;
 }
 
 @media screen and (max-width: 768px) {
-  // .introId {
-  //   letter-spacing: -1px;
-  //   font-weight: 100;
-  //   font-size: 2.5rem;
-  // }
+  .introId {
+    -webkit-text-stroke: none;
+    text-shadow: -1px -1px 0 $color-title, 1px -1px 0 $color-title,
+    -1px 1px 0 $color-title, 1px 1px 0 $color-title;
+    font-weight: 100;
+    font-size: 2.5rem;
+  }
 }
