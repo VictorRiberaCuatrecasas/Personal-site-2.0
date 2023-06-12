@@ -12,7 +12,6 @@
 .introId {
   color: $color-header-light-bg;
   letter-spacing: -1px;
-  font-weight: 100;
   -webkit-text-stroke: 1px $color-title;
   text-shadow: -1px -1px 3px $color-title, 1px -1px 8px $color-title,
     -1px 1px 8px $color-title, 1px 1px 0 $color-title;
@@ -31,7 +30,7 @@
   white-space: nowrap;
   cursor: help;
   display: inline-block;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: normal;
   color: $color-title;
   -webkit-text-stroke: 3px $color-title;
@@ -66,7 +65,6 @@
 .introRole {
   margin: 0;
   color: $color-header-light-bg;
-  font-weight: 100;
   font-size: 1.5em;
   letter-spacing: normal;
   text-shadow: -1px -1px 0 $color-title, 1px -1px 0 $color-title,
@@ -75,10 +73,6 @@
 
 @media screen and (max-width: 768px) {
   .introId {
-    -webkit-text-stroke: none;
-    text-shadow: -1px -1px 0 $color-title, 1px -1px 0 $color-title,
-    -1px 1px 0 $color-title, 1px 1px 0 $color-title;
-    font-weight: 100;
-    font-size: 2.5rem;
+    //sizing
   }
 }
