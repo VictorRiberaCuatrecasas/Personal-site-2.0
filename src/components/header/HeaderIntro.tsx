@@ -20,6 +20,7 @@ export default function HeaderIntro() {
         <p className={styles.introRole}>{t("introRoleOne")}</p>
         <p className={styles.introRole}>{t("introRoleTwo")}</p>
       </div>
+
       {/* <div className="intro-links">
         <ul>
           <li>

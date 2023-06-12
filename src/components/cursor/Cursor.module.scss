@@ -24,3 +24,13 @@
     height 0.15s ease-out, background-color 0.15s ease-out;
   z-index: 999;
 }
+
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+
+  .cursorBorder {
+    display: none;
+  }
+}
